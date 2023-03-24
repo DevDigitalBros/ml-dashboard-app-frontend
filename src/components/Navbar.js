@@ -22,29 +22,29 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav mx-auto ">
           <li className="nav-item">
-            <Link className="nav-link btn btn-light m-3 " to='/home' >
+            <Link className="nav-link btn  m-3 " to='/home' >
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link btn btn-light m-3" to='/about'>
+            <Link className="nav-link btn  m-3" to='/about'>
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link btn btn-light m-3" to='/dashboard'>
+            <Link className="nav-link btn  m-3" to='/dashboard'>
              Dashboard
             </Link>
           </li>
         </ul>
         <ul className="navbar-nav">
           <li className="nav-item">
-          <Link className="nav-link btn btn-light m-3" to='/login'>
+          <Link className="nav-link btn  m-3" to='/login'>
              Login
             </Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link underline btn btn-light m-3" to='/signup'>
+          <Link className="nav-link underline btn  m-3" to='/signup'>
              Signup
             </Link>
           </li>
