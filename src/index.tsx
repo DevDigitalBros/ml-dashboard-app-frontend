@@ -8,14 +8,25 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import '../node_modules/bootstrap/dist/js/bootstrap.esm';
+import { Provider } from 'react-redux';
+import store from './store/store';
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 
+//core
+import "primereact/resources/primereact.min.css";
+
+//icons
+import "primeicons/primeicons.css";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <BrowserRouter>
-  <React.StrictMode>
-    <App />
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
   </React.StrictMode>
   </BrowserRouter>
 );
