@@ -20,7 +20,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto ">
+          <ul className="navbar-nav ">
             <li className="nav-item">
               <Link className="nav-link btn  m-3 " to='/home' >
                 Home
@@ -39,6 +39,21 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link btn  m-3" to='/premierleaguedata'>
                 Premier League Data
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link btn  m-3" to='/premierleaguemodel'>
+                Premier League Model
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link btn  m-3" to='/sentimentanalysis'>
+                Sentiment Analysis
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link btn  m-3" to='/breastcancermodel'>
+                Breast Cancer
               </Link>
             </li>
 
