@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
-import { Chart } from 'primereact/chart';
+import { Line } from 'react-chartjs-2';
 
 const BreastCancerModel = () => {
 
@@ -31,12 +31,6 @@ const BreastCancerModel = () => {
 
     setResponse(json);
     console.log(json, 'Getting from API Breast Cancer Prediction');
-  };
-
-  useEffect(() => {
-
-    const diagnosis = response === "M" ? "Breast Cancer" : "Benign";
-    const dataPoints = response.data?.split(',').map(Number); // convert comma-separated string to array of numbers
 
     setchartData({
       labels: ["Radius Mean", "Texture Mean", "Perimeter Mean", "Area Mean", "Smoothness Mean", "Compactness Mean", "Concavity Mean", "Concave Points Mean", "Symmetry Mean", "Fractal Dimension Mean", "Radius SE", "Texture SE", "Perimeter SE", "Area SE", "Smoothness SE", "Compactness SE", "Concavity SE", "Concave Points SE", "Symmetry SE", "Fractal Dimension SE", "Radius Worst", "Texture Worst", "Perimeter Worst", "Area Worst", "Smoothness Worst", "Compactness Worst", "Concavity Worst", "Concave Points Worst", "Symmetry Worst", "Fractal Dimension Worst"],
@@ -50,7 +44,8 @@ const BreastCancerModel = () => {
         }
       ]
     });
-  }, [])
+  };
+
 
 
 
@@ -256,7 +251,7 @@ const BreastCancerModel = () => {
         <div className="col-sm-12 col-md-6 p-5">
           <h2>Prediction</h2>
           <h1>{diagnosis}</h1>
-          <Chart data={chartData} />
+          {/* <Line data={chartData} /> */}
         </div>
       </div>
     </div>
