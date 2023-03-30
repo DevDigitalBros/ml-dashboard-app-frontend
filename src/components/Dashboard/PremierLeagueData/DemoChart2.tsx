@@ -13,7 +13,14 @@ const  LineStylesDemo = () => {
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
         const data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: [ "Radius Mean", "Texture Mean", "Perimeter Mean", "Area Mean", "Smoothness Mean",
+            "Compactness Mean", "Concavity Mean", "Concave Points Mean", "Symmetry Mean",
+            "Fractal Dimension Mean", "Radius SE", "Texture SE", "Perimeter SE", "Area SE",
+            "Smoothness SE", "Compactness SE", "Concavity SE", "Concave Points SE",
+            "Symmetry SE", "Fractal Dimension SE", "Radius Worst", "Texture Worst",
+            "Perimeter Worst", "Area Worst", "Smoothness Worst", "Compactness Worst",
+            "Concavity Worst", "Concave Points Worst", "Symmetry Worst",
+            "Fractal Dimension Worst"],
             datasets: [
                 {
                     label: 'First Dataset',
@@ -21,23 +28,8 @@ const  LineStylesDemo = () => {
                     fill: false,
                     tension: 0.4,
                     borderColor: documentStyle.getPropertyValue('--blue-500')
-                },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
-                    fill: false,
-                    borderDash: [5, 5],
-                    tension: 0.4,
-                    borderColor: documentStyle.getPropertyValue('--teal-500')
-                },
-                {
-                    label: 'Third Dataset',
-                    data: [12, 51, 62, 33, 21, 62, 45],
-                    fill: true,
-                    borderColor: documentStyle.getPropertyValue('--orange-500'),
-                    tension: 0.4,
-                    backgroundColor: 'rgba(255,167,38,0.2)'
                 }
+              
             ]
         };
         const options = {
