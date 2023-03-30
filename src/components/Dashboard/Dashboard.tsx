@@ -72,7 +72,7 @@ const Dashboard = () => {
       chartTwo: <MultiAxisDemo />,
       chartThree: <RadarDemo />,
       chartFour: <PolarAreaDemo />,
-      chartFive: <ComboDemo />,
+      chartFive: <PolarAreaDemo />,
       chartSix: <ApplicationsCard />,
     }
   };

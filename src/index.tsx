@@ -10,8 +10,9 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import '../node_modules/bootstrap/dist/js/bootstrap.esm';
 import { Provider } from 'react-redux';
 import store from './store/store';
-//theme
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+import 'primereact/resources/primereact.min.css'; //core css
+import 'primereact/resources/themes/bootstrap4-light-blue/theme.css';
+import 'primeicons/primeicons.css';
 
 //core
 import "primereact/resources/primereact.min.css";
@@ -27,7 +28,7 @@ root.render(
       <Provider store={store}>
         <App />
       </Provider>
-  </React.StrictMode>
+    </React.StrictMode>
   </BrowserRouter>
 );
 

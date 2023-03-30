@@ -27,7 +27,7 @@ const PaginatorPremierLeagueData = () => {
 
     return (
         <div className="card">
-            <DataTable showGridlines value={selectpremierLeagueData} paginator rowsPerPageOptions={[5, 10, 25, 50]} rows={12} tableStyle={{ minWidth: '50rem' }} paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
+            <DataTable showGridlines value={selectpremierLeagueData} paginator rowsPerPageOptions={[5, 10, 25, 50]} rows={11} tableStyle={{ minWidth: '50rem' }} paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
                 currentPageReportTemplate="{first} to {last} of {totalRecords}" paginatorLeft={paginatorLeft} paginatorRight={paginatorRight} >
                 <Column field="HomeTeam" header="Home Team" style={{ width: '14%' }}></Column>
                 <Column field="AwayTeam" header="Away Team" style={{ width: '13%' }}></Column>
