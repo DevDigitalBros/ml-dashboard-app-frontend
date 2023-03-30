@@ -58,7 +58,7 @@ const Navbar = () => {
             </li>
 
           </ul>
-          <ul className="navbar-nav">
+          {/* <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link btn  m-3" to='/login'>
                 Login
@@ -69,7 +69,7 @@ const Navbar = () => {
                 Signup
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </nav>
