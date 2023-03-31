@@ -1,7 +1,7 @@
 /* eslint-disable no-regex-spaces */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import ApplicationsCard from './Applications';
 import { DashboardContainer, DashboardHeader, DashboardHeading } from './Dashboard.style';
@@ -12,7 +12,6 @@ import MultiAxisDemo from './PremierLeagueData/DemoChart';
 import LineStylesDemo from './PremierLeagueData/DemoChart2';
 import RadarDemo from './PremierLeagueData/DemoChart3';
 import PolarAreaDemo from './PremierLeagueData/DemoChart4';
-import ComboDemo from './PremierLeagueData/DemoChart5';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 interface MasterAdmin {
@@ -39,10 +38,9 @@ export const roles = {
 
 const Dashboard = () => {
 
-  const [data, setData] = useState<any>([]);
   const dispatch = useDispatch();
 
-  const [layout, setLayout] = useState<Array<any>>([
+  const [layout,] = useState<Array<any>>([
     { i: "chartOne", x: 0, y: 0, w: 4, h: 9 },
     { i: "chartTwo", x: 4, y: 0, w: 4, h: 9 },
     { i: "chartThree", x: 8, y: 0, w: 4, h: 9 },
@@ -92,7 +90,6 @@ const Dashboard = () => {
         if (formattedItems) {
           console.log(formattedItems, 'formatted data');
           dispatch(setselectpremierLeagueData(formattedItems));
-          setData(formattedItems);
         }
       }
     }

@@ -1,20 +1,13 @@
-import { React, useEffect, useState } from 'react'
+import { React, useState } from 'react'
 import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
-import { Chart } from 'primereact/chart';
 import { Button } from 'primereact/button';
 import ComboDemo from './Dashboard/PremierLeagueData/DemoChart5';
-import LineStylesDemo from './Dashboard/PremierLeagueData/DemoChart2';
 
 const BreastCancerModel = () => {
 
 
-  const [response, setResponse] = useState("");
-  const [data, setData] = useState();
   const [diagnosis, setdiagnosis] = useState();
-  const [chartData, setchartData] = useState();
-  const [chartData2, setchartData2] = useState();
-
   const [dataPoints, setcdataPoints] = useState();
 
   const handleSubmit = async () => {
@@ -23,8 +16,6 @@ const BreastCancerModel = () => {
     const data = {
       data: `${radiusMean},${textureMean},${perimeterMean},${areaMean},${smoothnessMean},${compactnessMean},${concavityMean},${concavePointsMean},${symmetryMean},${fractalDimensionMean},${radiusSe},${textureSe},${perimeterSe},${areaSe},${smoothnessSe},${compactnessSe},${concavitySe},${concavePointsSe},${symmetrySe},${fractalDimensionSe},${radiusWorst},${textureWorst},${perimeterWorst},${areaWorst},${smoothnessWorst},${compactnessWorst},${concavityWorst},${concavePointsWorst},${symmetryWorst},${fractalDimensionWorst}`
     };
-    setData(data)
-    const response = "Malignant"; // replace with API response
     const dataPoints = data.data.split(',').map(Number); // convert comma-separated string to array of numbers
     setcdataPoints(dataPoints)
     const requestOptions = {
@@ -36,33 +27,7 @@ const BreastCancerModel = () => {
     const json = await res.json();
     setdiagnosis(json === "M" ? "Breast Cancer" : "Benign")
 
-    setResponse(json);
     console.log(json, 'Getting from API Breast Cancer Prediction');
-
-    setchartData({
-      labels: ["Radius Mean", "Texture Mean", "Perimeter Mean", "Area Mean", "Smoothness Mean", "Compactness Mean", "Concavity Mean", "Concave Points Mean", "Symmetry Mean", "Fractal Dimension Mean", "Radius SE", "Texture SE", "Perimeter SE", "Area SE", "Smoothness SE", "Compactness SE", "Concavity SE", "Concave Points SE", "Symmetry SE", "Fractal Dimension SE", "Radius Worst", "Texture Worst", "Perimeter Worst", "Area Worst", "Smoothness Worst", "Compactness Worst", "Concavity Worst", "Concave Points Worst", "Symmetry Worst", "Fractal Dimension Worst"],
-      datasets: [
-        {
-          label: 'Data Points',
-          data: dataPoints,
-          fill: false,
-          borderColor: 'rgba(75,192,192,1)',
-          lineTension: 0.1
-        }
-      ]
-    });
-    setchartData2({
-      labels: ["Radius Mean", "Texture Mean", "Perimeter Mean", "Area Mean", "Smoothness Mean", "Compactness Mean", "Concavity Mean", "Concave Points Mean", "Symmetry Mean", "Fractal Dimension Mean", "Radius SE", "Texture SE", "Perimeter SE", "Area SE", "Smoothness SE", "Compactness SE", "Concavity SE", "Concave Points SE", "Symmetry SE", "Fractal Dimension SE", "Radius Worst", "Texture Worst", "Perimeter Worst", "Area Worst", "Smoothness Worst", "Compactness Worst", "Concavity Worst", "Concave Points Worst", "Symmetry Worst", "Fractal Dimension Worst"],
-      datasets: [
-        {
-          label: 'Data Points',
-          data: dataPoints,
-          fill: false,
-          borderColor: 'rgba(75,192,192,1)',
-          lineTension: 0.1
-        }
-      ]
-    });
   };
 
 

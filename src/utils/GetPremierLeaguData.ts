@@ -8,8 +8,8 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({
     region: "us-east-1",
     credentials: {
-        accessKeyId: "AKIAT5LMH4KGENPI3TOW",
-        secretAccessKey: "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",
+        accessKeyId: process.env.ACCESS_KEY_ID!,
+        secretAccessKey: process.env.SECRET_ACCESS_KEY!,
     },
 });
 const ddbDocClient = DynamoDBDocumentClient.from(client);
